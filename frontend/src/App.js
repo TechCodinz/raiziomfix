@@ -1,11 +1,24 @@
-import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import Settings from "./pages/Settings";
+import Login from "./pages/Login";
+import RaiziomAssistant from "./components/RaiziomAssistant";
+
+function PrivateRoute({ children }) {
+  const loggedIn = localStorage.getItem("raiziomUser");
+  return loggedIn ? children : <Navigate to="/login" />;
+}
 
 function App() {
   return (
-    <div>
-      <h1>Hello from RaiziomFix!</h1>
-      <p>This is your deployed frontend.</p>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+        <Route path="/settings" element={<PrivateRoute><Settings /></PrivateRoute>} />
+      </Routes>
+      <RaiziomAssistant />
+    </Router>
   );
 }
 
