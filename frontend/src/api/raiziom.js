@@ -1,4 +1,4 @@
-const BASE_URL = "https://your-api-url.onrender.com"; // replace with actual
+const BASE_URL = "https://raiziomfix.onrender.com"; // replace with actual
 
 export async function sendIdeaToRaiziom(idea) {
   const res = await fetch(`${BASE_URL}/idea`, {
