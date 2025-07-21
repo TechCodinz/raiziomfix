@@ -5,7 +5,7 @@ export default function RaiziomAssistant() {
   const [response, setResponse] = useState("");
 
   const askRaiziom = async () => {
-    const res = await fetch("https://your-api-url.onrender.com/ai/respond", {
+    const res = await fetch("https://raiziomfix.onrender.com/ai/respond", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ input: message }),
