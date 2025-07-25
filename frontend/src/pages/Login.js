@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { login as apiLogin, signup } from "../api/raiziom";
 import { login, register } from "../api/raiziom";
 
 export default function Login() {
@@ -8,6 +9,12 @@ export default function Login() {
   const [isRegister, setIsRegister] = useState(false);
   const navigate = useNavigate();
 
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      await apiLogin(email, password);
+    } catch (err) {
+      await signup(email, password);
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -27,6 +34,8 @@ export default function Login() {
     } catch (err) {
       alert("Error");
     }
+    localStorage.setItem("raiziomUser", email);
+    navigate("/");
   };
 
   return (
