@@ -4,3 +4,4 @@ python-dotenv
 httpx
 stripe
 paystackapi
+passlib[bcrypt]

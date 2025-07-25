@@ -6,7 +6,7 @@ import Login from "./pages/Login";
 import RaiziomAssistant from "./components/RaiziomAssistant";
 
 function PrivateRoute({ children }) {
-  const loggedIn = localStorage.getItem("raiziomUser");
+  const loggedIn = localStorage.getItem("raiziomToken");
   return loggedIn ? children : <Navigate to="/login" />;
 }
 
