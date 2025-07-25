@@ -1,19 +1,21 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { login as apiLogin, signup } from "../api/raiziom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    if (email === "admin@raiziom.com" && password === "1234") {
-      localStorage.setItem("raiziomUser", email);
-      navigate("/");
-    } else {
-      alert("Invalid credentials");
+    try {
+      await apiLogin(email, password);
+    } catch (err) {
+      await signup(email, password);
     }
+    localStorage.setItem("raiziomUser", email);
+    navigate("/");
   };
 
   return (
