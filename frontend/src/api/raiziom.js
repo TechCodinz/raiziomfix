@@ -8,3 +8,10 @@ export async function sendIdeaToRaiziom(idea) {
   });
   return res.json();
 }
+
+export async function createCheckoutSession() {
+  const res = await fetch(`${BASE_URL}/create-checkout-session`, {
+    method: "POST",
+  });
+  return res.json();
+}
