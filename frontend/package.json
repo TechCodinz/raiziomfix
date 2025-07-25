@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "concurrently": "^8.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^7.7.0",
@@ -11,6 +12,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "dev": "concurrently \"npm start\" \"cd ../backend && uvicorn app.main:app --reload\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
