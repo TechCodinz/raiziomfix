@@ -1,3 +1,4 @@
+
 #!/bin/bash
 set -e
 
@@ -17,3 +18,6 @@ npm run build
 cd ..
 
 wait $BACKEND_PID
+#!/bin/sh
+pip install -r requirements.txt
+uvicorn backend/app/main:app --host 0.0.0.0 --port 8000
