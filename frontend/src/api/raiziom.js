@@ -9,6 +9,12 @@ export async function register(email, password) {
   return res.json();
 }
 
+export async function createCheckoutSession() {
+  const res = await fetch(`${BASE_URL}/create-checkout-session`, {
+    method: "POST",
+  });
+  return res.json();
+}
 export async function login(email, password) {
   const res = await fetch(`${BASE_URL}/login`, {
     method: "POST",
