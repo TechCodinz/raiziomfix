@@ -1,6 +1,8 @@
+// 🌱 Raiziomfix Core Engine – To be evolved into Raiziom
 export const cloneMemory = {};
 
 export function updateMemory(clone, topic, value) {
+// 🧠 Core logic: part of Raiziom engine
   if (!cloneMemory[clone]) cloneMemory[clone] = {};
   if (!cloneMemory[clone][topic]) cloneMemory[clone][topic] = 0;
 

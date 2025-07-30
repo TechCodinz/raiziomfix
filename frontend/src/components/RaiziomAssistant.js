@@ -1,7 +1,9 @@
+// 🌱 Raiziomfix Core Engine – To be evolved into Raiziom
 import React, { useState } from 'react';
 import { askAI } from '../api/raiziom';
 
 export default function RaiziomAssistant() {
+// 🧠 Core logic: part of Raiziom engine
   const [message, setMessage] = useState('');
   const [response, setResponse] = useState('');
 
