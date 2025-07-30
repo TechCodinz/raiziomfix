@@ -1,4 +1,7 @@
+# 🌱 Raiziomfix Core Engine – To be evolved into Raiziom
+
 from setuptools import setup, find_packages
+# 🧠 Core logic: part of Raiziom engine
 
 setup(
     name='raiziomfix-backend',

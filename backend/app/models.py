@@ -1,6 +1,9 @@
+# 🌱 Raiziomfix Core Engine – To be evolved into Raiziom
+
 from dataclasses import dataclass, field
 from typing import List
 import datetime
+# 🧠 Core logic: part of Raiziom engine
 
 @dataclass
 class Transaction:

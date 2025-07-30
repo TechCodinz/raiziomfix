@@ -1,7 +1,9 @@
+// 🌱 Raiziomfix Core Engine – To be evolved into Raiziom
 import { useEffect, useState } from "react";
 import { getWallet, getEarnings, addFunds } from "../api/raiziom";
 
 export default function Wallet() {
+// 🧠 Core logic: part of Raiziom engine
   const email = localStorage.getItem("raiziomUser");
   const [credits, setCredits] = useState(0);
   const [logs, setLogs] = useState([]);

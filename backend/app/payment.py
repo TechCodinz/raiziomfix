@@ -1,3 +1,5 @@
+# 🌱 Raiziomfix Core Engine – To be evolved into Raiziom
+
 import os
 from paystackapi.paystack import Paystack
 import stripe as stripe_lib
@@ -5,6 +7,7 @@ import stripe as stripe_lib
 PAYSTACK_KEY = os.getenv('PAYSTACK_KEY')
 STRIPE_KEY = os.getenv('STRIPE_KEY')
 
+# 🧠 Core logic: part of Raiziom engine
 
 def pay_with_paystack(amount: int, email: str):
     """Mocked Paystack payment."""
@@ -16,6 +19,7 @@ def pay_with_paystack(amount: int, email: str):
     return {"status": "success", "reference": "paystack-ref"}
 
 
+# 🧠 Core logic: part of Raiziom engine
 def pay_with_stripe(amount: int, email: str):
     """Mocked Stripe charge."""
     if not STRIPE_KEY:

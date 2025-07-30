@@ -1,23 +1,13 @@
-
 #!/bin/bash
+# 🌱 Raiziomfix Core Engine – To be evolved into Raiziom
 set -e
 
-# Load environment variables if .env exists
+# Load environment variables if present
 if [ -f .env ]; then
   export $(grep -v '^#' .env | xargs)
 fi
 
-# Start backend
-uvicorn backend.app.main:app --host 0.0.0.0 --port ${PORT:-8000} &
-BACKEND_PID=$!
-
-# Build frontend
-cd frontend
-npm install
-npm run build
-cd ..
-
-wait $BACKEND_PID
-#!/bin/sh
+# 🧠 Core logic: part of Raiziom engine
 pip install -r requirements.txt
-uvicorn backend/app/main:app --host 0.0.0.0 --port 8000
+cd frontend && npm install && npm run build && cd ..
+uvicorn backend.app.main:app --host 0.0.0.0 --port ${PORT:-8000}

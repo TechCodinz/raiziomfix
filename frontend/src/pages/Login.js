@@ -1,20 +1,15 @@
+// 🌱 Raiziomfix Core Engine – To be evolved into Raiziom
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { login as apiLogin, signup } from "../api/raiziom";
 import { login, register } from "../api/raiziom";
 
 export default function Login() {
+  // 🧠 Core logic: part of Raiziom engine
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isRegister, setIsRegister] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      await apiLogin(email, password);
-    } catch (err) {
-      await signup(email, password);
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -27,15 +22,14 @@ export default function Login() {
       const data = await login(email, password);
       if (data.token) {
         localStorage.setItem("raiziomToken", data.token);
+        localStorage.setItem("raiziomUser", email);
         navigate("/");
-      } else {
-        alert("Login failed");
+        return;
       }
+      alert("Login failed");
     } catch (err) {
       alert("Error");
     }
-    localStorage.setItem("raiziomUser", email);
-    navigate("/");
   };
 
   return (
